@@ -332,5 +332,12 @@ if ("serviceWorker" in navigator) {
       );
   });
 }
-
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => console.log("APEX TRACKER offline support ready"))
+      .catch((error) => console.error(error));
+  });
+}
                     
